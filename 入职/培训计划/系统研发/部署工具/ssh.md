@@ -10,14 +10,14 @@
 
 - ssh-keygen：
 
-```cmd
+```bash
 # 生成公私钥对
 ssh-keygen -t rsa -C "chencan@bhz.com.cn"
 ```
 
 - ssh-copy-id：
 
-```cmd
+```bash
 # 将本机公钥存入目标服务器
 ssh-copy-id root@10.1.14.13
 ```
