@@ -1,7 +1,12 @@
 # markdown
 
-## 安装
+## 1. 安装
 
-## 配置
+## 2. 配置
 
-## 使用
+## 3. 使用
+
+### 3.1. mermaid
+
+- 画图工具；
+- [官网地址](https://mermaid.js.org/intro/)；
