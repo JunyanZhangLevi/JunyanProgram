@@ -50,9 +50,9 @@
 
 ### 3.3. 版本管理
 
-- [git](./部署工具/git.md)；
-- [markdown](./部署工具/markdown.md)；
-- [vscode](./部署工具/vscode.md)；
+- [git](./版本管理/git.md)；
+- [markdown](./版本管理/markdown.md)；
+- [vscode](./版本管理/vscode.md)；
 
 ## 4. 项目入门
 
