@@ -35,26 +35,28 @@
 
 ### 3.1. 关键技术
 
-- java8以上；
-- springboot，maven；
-- mysql，oracle；
-- redis；
+- [java8](./关键技术/java8.md)；
+- [springboot](./关键技术/springboot.md)，[maven](./关键技术/maven.md)；
+- [mysql](./关键技术/mysql.md)，[oracle](./关键技术/oracle.md)；
+- [redis](./关键技术/redis.md)；
 
 ### 3.2. 部署工具
 
-- docker，compose；
-- ssh；
-- nginx；
-- nfs；
+- [ssh](./部署工具/ssh.md)；
+- [docker](./部署工具/docker.md)，[compose](./部署工具/compose.md)；
+- [nginx](./部署工具/nginx.md)；
+- [nfs](./部署工具/nfs.md)；
+- [jenkins](./部署工具/jenkins.md)；
 
 ### 3.3. 版本管理
 
-- git；
-- svn；
-- markdown；
+- [git](./部署工具/git.md)；
+- [markdown](./部署工具/markdown.md)；
+- [vscode](./部署工具/vscode.md)；
 
 ## 4. 项目入门
 
-- TSM项目；
-- eSIM项目；
-- 制卡生产管理项目；
+- [TSM项目](http://10.1.14.6:5080/rd/tsm)；
+- [eSIM项目](http://10.1.14.6:5080/rd/esim)；
+- [制卡生产管理项目](http://10.1.14.6:5080/rd/herp)；
+- [部署工程](http://10.1.14.6:5080/rd/deploy)；
