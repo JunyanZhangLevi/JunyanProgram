@@ -32,7 +32,7 @@
 | [gitlab](http://10.1.14.6:5080/)       | 版本库               | 由**陈灿**创建   | 由项目管理者进行授权 | [操作说明文档](http://10.1.14.6:5080/help)                                                                                   |
 | [禅道](http://10.1.14.13:14000/)       | 项目库               | 由**陈灿**创建   | 由项目管理者进行授权 | [操作说明文档](http://10.1.14.13:14000/#app=help)                                                                            |
 | [seaTable](http://192.168.10.51:8090/) | 周报                 | 由**陈灿**创建   | 由项目管理者进行授权 | [操作说明文档](https://docs.seatable.cn/published/seatable-user-manual/home.md)                                              |
-| [公司软件地址](smb://10.10.3.2)        | office、打印机驱动等 | 由**刘志飞**创建   | 由项目管理者进行授权 | guest账号登录即可，无需填写密码；建议安装office2016，project2016，visio2016；                                                |
+| [公司软件地址](smb://10.10.3.2)        | office、打印机驱动等 | 由**刘志飞**创建 | 由项目管理者进行授权 | guest账号登录即可，无需填写密码；建议安装office2016，project2016，visio2016；                                                |
 
 ### 2.2. vpn软件
 
@@ -53,6 +53,21 @@
 - 其他：terminus；
 
 ## 3. 技能路线
+
+> 安装顺序
+
+1. 登录gitlab，访问[本文地址](http://10.1.14.6:5080/h-r/employ/-/tree/main/入职/培训计划/系统研发)；
+2. ssh，生成本机公私钥；
+3. vscode；
+4. git；
+5. 将ssh公钥填入gitlab，并下载入职工程和项目工程；
+6. 推荐创建~/Documents/workspace，按照gitlab项目分组创建项目文件夹；
+7. 使用vscode创建项目workspace视图；
+8. java8；
+9. maven；
+10. 数据库客户端；
+11. redis客户端；
+12. 创建springboot maven工程；
 
 ### 3.1. 关键技术
 
