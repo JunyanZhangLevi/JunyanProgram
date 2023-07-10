@@ -20,10 +20,14 @@
 
 ## 3. 使用
 
-### 3.1. 常用命令
+### 3.1. 操作说明
 
-- git clone 下载
-- git init 初始化本地版本库
-- git status 查看状态
-- add commit pull push 提交文件修改
-- git log 查看提交历史(英文状态下q退出)  
+- [官方文档](https://git-scm.com/book/zh/v2)；
+
+### 3.2. 常用命令
+
+- git clone 下载；
+- git init 初始化本地版本库；
+- git status 查看状态；
+- add commit pull push 提交文件修改；
+- git log 查看提交历史(英文状态下q退出)；
