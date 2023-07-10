@@ -16,10 +16,10 @@
 - git：
   - GitLens；
 - markdown：
-  - Auto Markdown TOC By AX1，用于生成标题序号，配置`toc：depth from 2`；
-  - Markdown All in One：预览工具；
-  - Markdown Emoji：表情工具；
-  - Markdown Preview Mermaid Suppor：mermaid代码块支持，用于画图；
+  - Auto Markdown TOC By AX1，用于生成标题序号，配置`toc：depth from 2`；  
+  - Markdown All in One：预览工具  
+  - Markdown Emoji：表情工具  
+  - Markdown Preview Mermaid Suppor：mermaid代码块支持，用于画图；  
   - markdownlint：用于语法或者格式检查；
 - Java：
   - Debugger for Java；

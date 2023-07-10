@@ -1,7 +1,10 @@
 # git
 
-## 安装
+## 1. 安装  
+- [官网](https://git-scm.com/downloads)下载安装包；
 
-## 配置
+## 2. 配置
+- 默认编辑器选择 Use Visual Stud o Code as Git's default edtor
 
-## 使用
+## 3. 使用
+-
