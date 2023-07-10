@@ -46,10 +46,38 @@
 
 ### 3.2. git
 
+- 使用git可视化功能按钮，实现git add/commit/reset/status/push/pull，文件修改历史查看、行提交信息等指令操作；
+- 分支创建、切换、删除等操作；
+
 ### 3.3. markdown
+
+- 预览；
+- 导出pdf、html、docx等格式；
+- 使用toc插件生成标题序号；
+- 格式化；
 
 ### 3.4. springboot
 
 - debug；
 - mvn：clean、install、package；
 - build project；
+
+### 3.5. 搜索
+
+- 当前文件搜索、替换；
+- workspace全文搜索、替换；
+- 文件名搜索；
+
+### 3.6. 指令
+
+- 指令对话框呼出快捷键；
+- 常用指令：
+  - compare，文件内容对比；
+  - maven，选择Spring Initializr，创建代码工程；
+  - transform to lowercase/uppercase，大小写切换；
+
+### 3.7. 文本编辑
+
+- 列选择；
+- 格式化；
+- 自动换行切换；
