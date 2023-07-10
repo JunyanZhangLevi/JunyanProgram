@@ -3,12 +3,23 @@
 ## 1. 安装
 
 - [官网](https://www.oracle.com/java/technologies/downloads/#java8-windows)下载安装包；
+- 注意下载64位版本；
 
 ## 2. 配置
 
-- 配置环境变量（java -version验证是否安装成功）
+- JAVA_HOME；
+- path；
+- 验证：
+  - java;
+  - javac;
+  - java -version;
 
 ## 3. 使用
 
-- 记事本编写，命令行运行
-- 各大编译器编写调试运行
+- jdk8需要掌握的特性；
+
+### 3.1. Lambda表达式
+
+### 3.2. 并行流
+
+### 3.3. Future
