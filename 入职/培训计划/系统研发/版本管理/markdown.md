@@ -6,7 +6,11 @@
 
 ## 3. 使用
 
-### 3.1. markdownlint规则详细介绍及自定义参数设置
+### 3.1. 官方文档
+
+- [官方文档](https://markdown.com.cn/basic-syntax/)
+
+### 3.2. markdownlint规则详细介绍及自定义参数设置
 
 - 参考链接<https://www.jianshu.com/p/51523a1c6fe1>
 - 单纯的链接地址需要用尖括号 (<>) 包裹，否则有些解释器不会解释为链接
