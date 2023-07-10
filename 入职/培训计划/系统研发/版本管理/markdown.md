@@ -10,9 +10,9 @@
 
 - [官方文档](https://markdown.com.cn/basic-syntax/)
 
-### 3.2. markdownlint规则详细介绍及自定义参数设置
+### 3.2. markdownlint插件规范
 
-- 参考链接<https://www.jianshu.com/p/51523a1c6fe1>
+- [官网地址](https://github.com/markdownlint/markdownlint)；
 - 单纯的链接地址需要用尖括号 (<>) 包裹，否则有些解释器不会解释为链接
 - 标题行的上下行必须都是空行 参数： "lines_above"：指定标题行上方的空行数，默认为1，可以设为更大或0 "lines_below"：指定标题行下方的空行数，默认为1，可以设为更大或0 注意当此处的空行设为比1大的数时，规则MD012的设置也要改
 - 文档中不能有连续的空行，在代码块中此规则不会生效 参数： "maximum"：指定文档中可以连续的最多空行数，默认值是1
