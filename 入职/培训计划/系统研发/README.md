@@ -57,10 +57,10 @@
 > 安装顺序
 
 1. 登录gitlab，访问[本文地址](http://10.1.14.6:5080/h-r/employ/-/tree/main/入职/培训计划/系统研发)；
-2. ssh，生成本机公私钥；
+2. ssh，生成本机公私钥，将ssh公钥填入gitlab；
 3. vscode；
 4. git；
-5. 将ssh公钥填入gitlab，并下载入职工程和项目工程；
+5. 下载gitlab提供的，入职工程和项目工程的**SSH地址**；
 6. 推荐创建~/Documents/workspace，按照gitlab项目分组创建项目文件夹；
 7. 使用vscode创建项目workspace视图；
 8. java8；
