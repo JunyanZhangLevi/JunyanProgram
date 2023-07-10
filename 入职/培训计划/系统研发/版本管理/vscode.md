@@ -6,10 +6,12 @@
 
 ## 2. 配置
 
+### 2.1. 基础配置
+
 1. 默认安装后，使用账号密码登录；
 2. 同步账号配置，完成插件安装；
 
-### 2.1. 插件
+### 2.2. 插件
 
 - git：
   - GitLens；
@@ -38,11 +40,15 @@
 
 ## 3. 使用
 
-### 3.1. git
+### 3.1. workspace
 
-### 3.2. markdown
+- 建立workspace视图，同时浏览多个工程或者文件夹信息；
 
-### 3.3. springboot
+### 3.2. git
+
+### 3.3. markdown
+
+### 3.4. springboot
 
 - debug；
 - mvn：clean、install、package；
