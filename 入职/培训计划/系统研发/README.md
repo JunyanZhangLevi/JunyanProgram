@@ -89,6 +89,7 @@
 - [git](./版本管理/git.md)；
 - [markdown](./版本管理/markdown.md)；
 - [vscode](./版本管理/vscode.md)；
+- [postman](./版本管理/postman.md)；
 
 ## 4. 项目入门
 
