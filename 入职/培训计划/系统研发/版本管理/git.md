@@ -31,3 +31,6 @@
 - git status 查看状态；
 - add commit pull push 提交文件修改；
 - git log 查看提交历史(英文状态下q退出)；
+- git checkout master 创建/切换分支；
+- git merge XX 合并分支；
+- 常见合并策略：Fast-forward(no-ff)、Recursive 、Ours、Theirs、Octopus；
