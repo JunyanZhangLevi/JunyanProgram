@@ -68,6 +68,7 @@
 10. 数据库客户端；
 11. redis客户端；
 12. 创建springboot maven工程；
+13. postman；
 
 ### 3.1. 关键技术
 
@@ -89,6 +90,7 @@
 - [git](./版本管理/git.md)；
 - [markdown](./版本管理/markdown.md)；
 - [vscode](./版本管理/vscode.md)；
+- [postman](./版本管理/postman.md)；
 
 ## 4. 项目入门
 
