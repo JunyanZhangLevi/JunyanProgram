@@ -15,6 +15,17 @@
 
 - [操作文档](https://dev.mysql.com/doc/workbench/en/)；
 
+#### 1.3.1. sql语句书写习惯
+
+- 标准的sql语句编写格式如下，这样写层次更加清晰
+
+```shell
+select a.*,b.* 
+from department a 
+join employee b on b.department_id=a.id
+where 1=1
+```
+
 ## 2. 服务端
 
 ### 2.1. 安装
