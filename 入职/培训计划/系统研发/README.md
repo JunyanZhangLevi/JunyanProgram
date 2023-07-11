@@ -68,6 +68,7 @@
 10. 数据库客户端；
 11. redis客户端；
 12. 创建springboot maven工程；
+13. postman；
 
 ### 3.1. 关键技术
 
