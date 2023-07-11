@@ -6,9 +6,11 @@
 
 ## 配置
 
-- 将本机公钥存入目标服务器 ssh-copy-id root@10.1.14.13
+- 将本机公钥存入目标服务器
 
-- 配置链接内网仓库 scp root@10.1.14.13:/root/.m2/settings.xml .
+- 配置链接内网仓库
+
+>scp root@10.1.14.13:/root/.m2/settings.xml .
   
 - 验证： mvn -v
 
