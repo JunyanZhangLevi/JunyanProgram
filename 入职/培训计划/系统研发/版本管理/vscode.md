@@ -15,9 +15,11 @@
 
 - git：
   - GitLens；
+  - Git-extension-pack；
 - markdown：
   - Auto Markdown TOC By AX1，用于生成标题序号，配置`toc：depth from 2`；  
-  - Markdown All in One：预览工具  
+  - Markdown All in One：预览工具
+  - Markdown PDF: 导出PDF格式
   - Markdown Emoji：表情工具  
   - Markdown Preview Mermaid Suppor：mermaid代码块支持，用于画图；  
   - markdownlint：用于语法或者格式检查；
