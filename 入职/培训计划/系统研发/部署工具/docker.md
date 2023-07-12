@@ -3,13 +3,12 @@
 - docker install offline
 - download url:`https://download.docker.com/linux/static/stable/x86_64/`
 
-## 1. Docker概念
+## 1. Docker 概念
 
 - 1. 镜像：镜像类似虚拟机中的只读模板，属于一个独立的文件系统，带有创建 Docker 容器的指令。通常，一个镜像是基于另一个镜像的，还需要进行一些额外的定制。例如，您可以构建一个基于 ubuntu 镜像的镜像，但是安装 Apache web 服务器和您的应用程序，以及使您的应用程序运行所需的配置细节。
 - 2. 容器：容器是用镜像创建的运行实例。每个容器都可以被启动，开始，停止，删除，同时容器之间相互隔离，保证应用运行期间的安全。我们可以把容器理解为一个精简版的 linux 操作系统。服务在容器中运行。
 
-
-## 1. Docker安装
+## 2. Docker 安装
 
 ```sh
 #上传到Centos系统/data/目录,如
@@ -29,7 +28,7 @@ docker version
 docker info
 ```
 
-## 2. 配置Docker开机自启动服务
+## 3. 配置 Docker 开机自启动服务
 
 ```sh
 #添加docker.service文件
@@ -43,7 +42,7 @@ Description=Docker Application Container Engine
 Documentation=https://docs.docker.com
 After=network-online.target firewalld.service
 Wants=network-online.target
-  
+
 [Service]
 Type=notify
 # the default is not to use systemd for cgroups because the delegate issues still
@@ -68,7 +67,7 @@ KillMode=process
 Restart=on-failure
 StartLimitBurst=3
 StartLimitInterval=60s
-  
+
 [Install]
 WantedBy=multi-user.target
 ```
@@ -96,7 +95,7 @@ systemctl enable docker.service
 systemctl is-enabled docker.service
 ```
 
-## 3. 导入镜像
+## 4. 导入镜像
 
 ```sh
 #docker
@@ -114,15 +113,15 @@ docker load < images-springboot.tar
 docker images
 ```
 
-## 4. 导出镜像
+## 5. 导出镜像
 
 ```sh
 docker save -o images-ui.tar spring/ui
 ```
 
-## 5. docker-compose
+## 6. docker-compose
 
-### 5.1. 安装
+### 6.1. 安装
 
 1. 下载安装包:`https://github.com/docker/compose/releases`；
 2. 安装过程：
@@ -147,10 +146,10 @@ alias compose='/usr/bin/docker-compose -f /data/appBins/basic/docker/docker-comp
 source /etc/profile
 ```
 
-### 5.2. Network网络配置
+### 6.2. Network 网络配置
 
-- docker自动创建的网桥与电信分配的堡垒机ip冲突解决方案；
-- 原因：docker自动创建的bridge网桥默认使用172.16.0.0/16，与电信分配给堡垒机的ip冲突。多次执行docker-compose up -d后，自动生成的网桥会一次使用172.17.x.x，172.18.x.x；
+- docker 自动创建的网桥与电信分配的堡垒机 ip 冲突解决方案；
+- 原因：docker 自动创建的 bridge 网桥默认使用 172.16.0.0/16，与电信分配给堡垒机的 ip 冲突。多次执行 docker-compose up -d 后，自动生成的网桥会一次使用 172.17.x.x，172.18.x.x；
 
 ```sh
 # 查看docker版本
@@ -205,21 +204,21 @@ alias compose='/usr/bin/docker-compose -f /data/appBins/basic/docker/docker-comp
 compose up -d
 ```
 
-### 5.3. 业务应用的操作
+### 6.3. 业务应用的操作
 
 - 基础指令：
 
-| 命令                                          | 用途                                                       |
-| --------------------------------------------- | ---------------------------------------------------------- |
-| compose ps                                    | 列举应用启动的Docker容器                                   |
-| compose top                                   | 列举应用启动的进程                                         |
-| compose stop #service#                        | 停止正在运行的，**指定的**应用                             |
-| compose start #service#                       | 启动处于停止状态中的，**指定的**应用                       |
-| compose rm #service#                          | 处于停止状态中的，**指定的**应用，删除其Docker容器         |
-| compose restart #service#                     | 重启应用                                                   |
-| compose down                                  | 停止正在运行的**全部**应用，并删除为应用创建的Docker容器。 |
-| compose up -d                                 | 新建**全部**应用定义，创建Docker容器，并启动应用。         |
-| compose logs -f --tail #最近n条日志# #service# | 查询**指定的**应用日志，包含所有容器日志                   |
+| 命令                                             | 用途                                                         |
+| ------------------------------------------------ | ------------------------------------------------------------ |
+| compose ps                                       | 列举应用启动的 Docker 容器                                   |
+| compose top                                      | 列举应用启动的进程                                           |
+| compose stop #service#                           | 停止正在运行的，**指定的**应用                               |
+| compose start #service#                          | 启动处于停止状态中的，**指定的**应用                         |
+| compose rm #service#                             | 处于停止状态中的，**指定的**应用，删除其 Docker 容器         |
+| compose restart #service#                        | 重启应用                                                     |
+| compose down                                     | 停止正在运行的**全部**应用，并删除为应用创建的 Docker 容器。 |
+| compose up -d                                    | 新建**全部**应用定义，创建 Docker 容器，并启动应用。         |
+| compose logs -f --tail #最近 n 条日志# #service# | 查询**指定的**应用日志，包含所有容器日志                     |
 
 - 首次部署：
 
@@ -234,9 +233,9 @@ compose up -d
 compose restart #service#
 ```
 
-## 6. bash-completion
+## 7. bash-completion
 
-- 用于补全bash指令名和指令参数；
+- 用于补全 bash 指令名和指令参数；
 - 安装过程：
 
 ```sh
