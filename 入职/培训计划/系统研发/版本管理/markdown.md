@@ -8,7 +8,7 @@
 
 ### 3.1. 官方文档
 
-- [官方文档](https://markdown.com.cn/basic-syntax/)
+- [官方文档](https://markdown.com.cn/basic-syntax/)；
 
 ### 3.2. markdownlint插件规范
 
