@@ -7,8 +7,9 @@
 
 ## 配置
 
-- maven
-- jdk
+- 导入依赖
+- properties配置文件
+- .gitignore文件
 - VSCode插件
 
 ## 使用
