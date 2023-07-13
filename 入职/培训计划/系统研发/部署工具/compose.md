@@ -14,7 +14,7 @@
 
 [部署工程](http://10.1.14.6:5080/rd/deploy)；
 
-### 3.1.1. cctc-deploy项目目录简介
+#### 3.1.1. cctc-deploy项目目录简介
 
 - appBaks 存放备份
 - appBins 存放部署服务的配置文件
@@ -22,7 +22,7 @@
 - appDatas 存放项目运行中产生的数据
 - appLogs 存放项目日志
 
-## 3.1.2. 关于ctcc-deploy的简介
+#### 3.1.2. 关于ctcc-deploy的简介
 
 - 1. 目前公司采用的部署项目的方式是挂载的方式，所谓的挂载就是不再把代码打包拖进云服务器，而是通过gitlib与云服务器进行交互的方式，通过一些配置文件和指令，云服务器自动去gitlib上进行加载代码。
 - 2. 这样即使我们修改了代码，我们只需要把新的代码提交到gitlib上，然后再在云服务器上输入一些指令，云服务器就会自动去gitlib上加载改变的部分代码块，这样就会方便很多，不用再来回删除和制作镜像。
@@ -41,7 +41,7 @@ cp -rf ctcc-deploy/appBins .
 cp ctcc-deploy/package-all.sh .
 ```
 
-### 3.1.3. docker-compose.yml介绍
+#### 3.1.3. docker-compose.yml介绍
 
 - 1. docker-compose.yml配置文件里面存放各个服务的配置，可以把从image行到command行，当作传统部署的docker run命令
 
@@ -66,3 +66,70 @@ cp ctcc-deploy/package-all.sh .
 
 - 2. docker-compose可以理解为容器集合的管理器,是指令执行的依据，因为执行docker指令去管理容器过于复杂，所以才考虑使用docker-compose配置文件
 
+### 3.2. 使用cctc-deploy部署项目
+
+#### 3.2.1. 使用cctc-deploy部署小米mi-ms11项目实例
+
+- 1. 在ctcc-deploy的appBins目录下新建card目录，在card目录下新建mi目录，然后在mi目录下新建mi-ms11目录（其实建的目录有点多了，是想和gitlib上的目录保持一致）
+- 2. 建好目录后，把ctcc-deploy的appBins目录下的ctid目录下的local-service目录下的所有内容复制到mi-ms11目录，然后进行配置文件内容的修改
+- 3. 首先修改application-dev.yml文件，把mi-ms11项目中的application-dev.yml复制过来即可（有可能需要修改数据库）
+- 4. 修改package.sh文件,参照local-service目录下的package.sh文件，进行修改。mi-ms11的package.sh如下：
+  
+```shell
+echo "backuping ..."
+# -d "目录" 表示如果存在当前目录
+if [ -d "/data/appBaks/card/mi/mi-ms11/jar/" ];then
+  echo ""
+  else
+  mkdir -p /data/appBaks/card/mi/mi-ms11/jar/
+fi
+
+mv target/*.jar /data/appBaks/card/mi/mi-ms11/jar/
+
+echo "done."
+# 下面是把项目打成jar包
+echo "packaging  ..."
+
+mkdir -p workspace
+cd workspace
+
+# git_par="-b main" 表示main分支。$1表示占位符。-z 表示不存在。这一段指定拉取具体分支
+git_par=$1
+if [ -z "$git_par" ]; then
+  git_par="-b main"
+else
+  git_par="-b $git_par"
+fi
+echo git执行参数:$git_par
+# 拉取gitlib上的代码
+git clone $git_par ssh://git@10.1.14.6:5022/rd/card/mi/mi-ms11.git
+# 拉取之后，进入项目内部，对项目进行打包操作，并把生成的jar包给复制到 appBins/card/mi/mi-ms11/target目录下
+cd mi-ms11/
+
+mvn package -Dmaven.test.skip=true
+cp target/mi-ms11*.jar ../../../target/
+cd ../../../
+rm -rf workspace
+echo "done."
+```
+
+- 5. 在ctcc-deploy的appBins/basic/docker目录下的docker-compose.yml文件中添加配置文件，仍然是复制local-service的相关配置进行修改
+
+```shell
+  mi-ms11:
+     image: service/springboot:latest
+     hostname: card.mi-ms11
+     logging:
+       driver: "json-file"
+       options:
+         max-size: "50m"
+     ports:
+       - 20001:8080
+     volumes:
+       - /data/appDatas/card/mi/mi-ms11:/root/volumns
+       - /data/appBins/card/mi/mi-ms11/target:/root/target
+       - /data/appLogs/card/mi/mi-ms11:/root/log
+     command: sh -c 'chmod a+x /data/appBins/card/mi/mi-ms11/target && cd /data/appBins/card/mi/mi-ms11/target && java -jar -server -Xms128m -Xmx256m mi-ms11*.jar'
+     deploy:
+         replicas: 1
+```
