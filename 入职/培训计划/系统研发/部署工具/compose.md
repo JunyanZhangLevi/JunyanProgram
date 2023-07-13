@@ -113,7 +113,7 @@ rm -rf workspace
 echo "done."
 ```
 
-- 5. 在ctcc-deploy的appBins/basic/docker目录下的docker-compose.yml文件中添加配置文件，仍然是复制local-service的相关配置进行修改
+- 5. 在ctcc-deploy的appBins/basic/docker目录下的docker-compose.yml文件中添加配置文件，仍然复制local-service的相关配置进行修改
 
 ```shell
   mi-ms11:
@@ -133,3 +133,12 @@ echo "done."
      deploy:
          replicas: 1
 ```
+
+- 6. 这样所有的配置文件就都修改完成了，修改完成之后，记得提交到gitlib上。
+- 7. 登陆10.1.14.14，首先进入/data目录，进入/data目录后首先执行"./update.sh",这个命令是云服务器重新拉取更新gitlib上的cctc-deploy代码。
+- 8. 然后进入/data/appBins/card/mi/mi-ms11/target目录下，执行"./package.sh"。./package.sh命令是把我们的项目代码打包成jar包，如果我们的项目代码没有改变，就不用执行这个。
+- 9. 最后再执行"compose up -d"。这个命令是重启配置文件或者代码发生变化的容器。
+
+#### 3.2.2. 注意事项
+
+
