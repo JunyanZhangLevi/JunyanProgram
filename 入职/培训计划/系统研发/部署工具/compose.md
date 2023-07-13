@@ -141,4 +141,22 @@ echo "done."
 
 #### 3.2.2. 注意事项
 
+##### 3.2.2.1 volumes映射
 
+- 1. 一般来说，服务器目录和cctc-deoloy的目录保持一致，这三条目录分别用来存储日志，运行文件（运行文件包括配置文件和运行数据），业务文件。
+- 2. 容器目录尽量使用root目录下的，这样所拥有的权限（r-w-x）才更多。
+- 3. 容器内部的目录也不是可以随便写的，要对应的上。
+- 4. 比如在appBins/card/mi/mi-ms11/target目录下的log4j2.xml中，指定日志存储路径如下。那么在volumes中我们要设置的存储日志的容器目录就要和log4j2.xml中指定的目录保持一致。
+
+```shell
+  <!-- 定义日志存储的路径 -->
+        <property name="FILE_PATH" value="/root/log" />
+```
+
+- 5. 比如mi-ms11项目的业务文件的存储路径在application.yml中配置如下，那volumes中存储业务文件的容器目录就要和application.yml中指定的业务文件存储路径保持一致。
+
+```shell
+    zipFilePath: /root/volumns/zip/
+    mcaFilePath: /root/volumns/mca/
+    resultFilePath: /root/volumns/result/
+```
