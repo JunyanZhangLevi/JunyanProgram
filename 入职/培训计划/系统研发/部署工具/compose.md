@@ -6,8 +6,6 @@
 
 - 1. 概念：Compose 是用于定义和运行多容器 Docker 应用程序的工具。通过 Compose，您可以使用 YML 文件来配置应用程序需要的所有服务。然后，使用一个命令，就可以从 YML 文件配置中创建并启动所有服务。
 
-
-
 ## 2. 配置
 
 ## 3. 使用
@@ -24,7 +22,7 @@
 - appDatas 存放项目运行中产生的数据
 - appLogs 存放项目日志
 
-## 3.1.2. 关于ctcc_deploy的简介
+## 3.1.2. 关于ctcc-deploy的简介
 
 - 1. 目前公司采用的部署项目的方式是挂载的方式，所谓的挂载就是不再把代码打包拖进云服务器，而是通过gitlib与云服务器进行交互的方式，通过一些配置文件和指令，云服务器自动去gitlib上进行加载代码。
 - 2. 这样即使我们修改了代码，我们只需要把新的代码提交到gitlib上，然后再在云服务器上输入一些指令，云服务器就会自动去gitlib上加载改变的部分代码块，这样就会方便很多，不用再来回删除和制作镜像。
@@ -42,3 +40,29 @@ cd ..
 cp -rf ctcc-deploy/appBins .
 cp ctcc-deploy/package-all.sh .
 ```
+
+### 3.1.3. docker-compose.yml介绍
+
+- 1. docker-compose.yml配置文件里面存放各个服务的配置，可以把从image行到command行，当作传统部署的docker run命令
+
+```shell
+  mi-ms11:
+     image: service/springboot:latest
+     hostname: card.mi-ms11
+     logging:
+       driver: "json-file"
+       options:
+         max-size: "50m"
+     ports:
+       - 20001:8080
+     volumes:
+       - /data/appDatas/card/mi/mi-ms11:/root/volumns
+       - /data/appBins/card/mi/mi-ms11/target:/root/target
+       - /data/appLogs/card/mi/mi-ms11:/root/log
+     command: sh -c 'chmod -R a+x /root && cd /root/target && java -jar -server -Xms128m -Xmx256m mi-ms11*.jar'
+     deploy:
+         replicas: 1
+```
+
+- 2. docker-compose可以理解为容器集合的管理器,是指令执行的依据，因为执行docker指令去管理容器过于复杂，所以才考虑使用docker-compose配置文件
+
