@@ -13,9 +13,9 @@
 2. git；
 3. ssh，生成本机公私钥，将ssh公钥填入gitlab中；
 4. vscode；
-5. 下载gitlab提供的，入职工程和项目工程的**SSH地址**；
+5. 下载gitlab提供的，入职工程和项目工程的**SSH地址**（打开gitlab上your projects下的hr/employ，进行ssh git clone）；
 6. 推荐创建~/Documents/workspace，按照gitlab项目分组创建项目文件夹；
-7. 使用vscode创建项目workspace视图；
+7. 使用vscode创建项目workspace视图（通过vs code下file->save workspace as创建具体某一项目的workspace）；
 8. java8；
 9. maven；
 10. 数据库客户端；

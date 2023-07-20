@@ -3,8 +3,8 @@
 ## 1. 安装  
 
 - [官网](https://git-scm.com/downloads)下载安装包；
-- git安装前，建议提前安装vscode，并在安装选项中选择使用vscode作为编辑器；
-- 安装过程中，注意勾选git bash到path，以方便terminal识别；
+- git安装前，建议提前安装vscode，并在**安装中**选择使用vscode作为编辑器；
+- **安装过程中**，注意勾选git bash到path，以方便terminal识别；
 
 ## 2. 配置
 
@@ -15,7 +15,7 @@
 
 ### 2.2. gitlab
 
-- 将ssh公钥填入gitlab，建议使用工程ssh地址进行交互，无需每次输入密码验证；
+- 找到gitlab上**SSH keys**，将ssh公钥填入gitlab，建议使用工程ssh地址进行交互，无需每次输入密码验证；
 - 建议将默认视图改为your projects' activity；
 
 ## 3. 使用
